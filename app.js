@@ -13,11 +13,15 @@ async function generateShopifyCsv(category, numProducts) {
 
   // Creaetes mock products, CSV file and adds them to it
   for (let i = 0; i < numProducts; i++) {
-    const imageUrl = await getImageUrl(similarWords[i], i);
+    const imageUrl = await getImageUrl(similarWords[i]);
+    if (imageUrl == 0) {
+      continue;
+    }
     const product = createMockProduct(similarWords[i], imageUrl);
     products.push(product);
   }
 
+  // Create a CSV file
   const csvWriter = createCsvWriter({
     path: 'shopify_products.csv',
     header: [
@@ -39,20 +43,20 @@ async function generateShopifyCsv(category, numProducts) {
 // Create a mock product object
 function createMockProduct(similarWord, imageUrl) {
   return {
-    Handle: faker.helpers.slugify(faker.commerce.productName()),
+    Handle: similarWord,
     Title: similarWord,
     Body: `<p>${faker.lorem.paragraph()}</p>`,
     Vendor: faker.company.companyName(),
     Type: similarWord,
-    Tags: `${similarWord},${faker.commerce.department()}`,
+    Tags: `${similarWord}`,
     ImageSrc: imageUrl,
   };
 }
 
 // Get a random image URL from Pexels
-async function getImageUrl(category, index) {
+async function getImageUrl(category) {
   const images = await pexels.searchImages(category, numProducts);
-  return images.length ? images[index].src.small : '';
+  return images.length ? images[0].src.medium : 0;
 }
 
 // Run the script with a category and number of products as arguments

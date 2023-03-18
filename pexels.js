@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const PEXELS_API_KEY = process.env.PEXELS_API_KEY;
 
-async function searchImages(query, perPage = 15) {
+async function searchImages(query) {
   const url = 'https://api.pexels.com/v1/search';
 
   try {
@@ -13,7 +13,9 @@ async function searchImages(query, perPage = 15) {
       },
       params: {
         query: query,
-        per_page: perPage,
+        per_page: 1,
+        orientation: 'square',
+        locale: 'en-US',
       },
     });
 
