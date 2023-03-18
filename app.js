@@ -9,7 +9,7 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 // Generate a CSV file for Shopify
 async function generateShopifyCsv(category, numProducts) {
   const products = [];
-  const similarWords = await datamuse.getRelatedWords(category);
+  const similarWords = await datamuse.getRelatedWords(category, numProducts);
 
   // Creaetes mock products, CSV file and adds them to it
   for (let i = 0; i < numProducts; i++) {
