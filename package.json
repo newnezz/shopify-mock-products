@@ -1,5 +1,5 @@
 {
-  "name": "shopifymockproducts",
+  "name": "shopify-mock-products",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -13,6 +13,10 @@
     "csv-writer": "^1.6.0",
     "datamuse": "^1.0.5",
     "dotenv": "^16.0.3",
-    "faker": "^5.5.3"
+    "faker": "^5.5.3",
+    "shopify-mock-products": "^1.0.0"
+  },
+  "bin": {
+    "products": "./app.js"
   }
 }

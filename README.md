@@ -12,10 +12,18 @@ This Node.js application generates a CSV file with mock product data for Shopify
 
 - Node.js (version 14 or later recommended)
 - NPM (Node Package Manager)
-- Pexels API key
+- Pexels API key (.env file)
 
 ## Installation
 
+### NPM
+```bash
+npm i shopify-mock-products
+products "Category" Amount
+```
+example: product "Electronics" 10
+
+### Manually
 1. Clone the repository:
 
 ```bash
@@ -34,7 +42,8 @@ cd shopify-mock-products
 npm install
 ```
 
-4. Set up the environment variables:
+### .ENV
+Set up the environment variables:
 Create a **.env** file in the project's root directory and add your Pexels API key:
 
 ```makefile

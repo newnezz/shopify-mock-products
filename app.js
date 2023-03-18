@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const axios = require('axios');
 const faker = require('faker');
 const fs = require('fs');
