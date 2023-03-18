@@ -21,7 +21,7 @@ This Node.js application generates a CSV file with mock product data for Shopify
 npm i shopify-mock-products
 products "Category" Amount
 ```
-example: product "Electronics" 10
+example: products "Electronics" 10
 
 ### Manually
 1. Clone the repository:
