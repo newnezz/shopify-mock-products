@@ -65,6 +65,7 @@ This command will generate a CSV file named **shopify_products.csv** containing 
 - The amount argument is a maximum, but you will most likely get less, because ones w/o images are discarded
 - Main improvement would be to have higher quality images, currently using Pexels, but considering other options
   including adding better keywords for filtering
+- You can request any amount you want; however, over 100 at once, there may be errors
 
 
 ## Contributing

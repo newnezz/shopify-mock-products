@@ -59,7 +59,7 @@ function createMockProduct(similarWord, imageUrl) {
 // Get a random image URL from Pexels
 async function getImageUrl(category) {
   const images = await pexels.searchImages(category, numProducts);
-  return images.length ? images[0].src.medium : 0;
+  return images.length ? images[0].src.large2x : 0;
 }
 
 // Run the script with a category and number of products as arguments
