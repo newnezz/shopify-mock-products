@@ -60,6 +60,7 @@ node app.js "Electronics" 10
 ```
 
 This command will generate a CSV file named **shopify_products.csv** containing 10 mock electronic products.
+Note: You will likely not get the exact amount specificed, as some photos may be missing, and are then not added to the CSV, as to keep the list more complete.
 
 
 ## Contributing
