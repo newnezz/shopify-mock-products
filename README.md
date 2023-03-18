@@ -60,7 +60,11 @@ node app.js "Electronics" 10
 ```
 
 This command will generate a CSV file named **shopify_products.csv** containing 10 mock electronic products.
-Note: You will likely not get the exact amount specificed, as some photos may be missing, and are then not added to the CSV, as to keep the list more complete.
+
+## NOTE / TODO
+- The amount argument is a maximum, but you will most likely get less, because ones w/o images are discarded
+- Main improvement would be to have higher quality images, currently using Pexels, but considering other options
+  including adding better keywords for filtering
 
 
 ## Contributing
