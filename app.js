@@ -32,7 +32,9 @@ async function generateShopifyCsv(category, numProducts) {
       { id: 'Type', title: 'Type' },
       { id: 'Tags', title: 'Tags' },
       { id: 'ImageSrc', title: 'Image Src' },
+      { id: 'VariantPrice', title: 'Variant Price' },
     ],
+    append: false
   });
 
   csvWriter.writeRecords(products).then(() => {
@@ -50,6 +52,7 @@ function createMockProduct(similarWord, imageUrl) {
     Type: similarWord,
     Tags: `${similarWord}`,
     ImageSrc: imageUrl,
+    VariantPrice: faker.commerce.price(),
   };
 }
 
@@ -70,3 +73,11 @@ if (isNaN(numProducts)) {
 
 generateShopifyCsv(category, numProducts);
 
+
+/**
+ * 
+Response Header	Meaning
+X-Ratelimit-Limit	Your total request limit for the monthly period
+X-Ratelimit-Remaining	How many of these requests remain
+X-Ratelimit-Reset	UNIX timestamp of when the currently monthly period will roll over
+ */

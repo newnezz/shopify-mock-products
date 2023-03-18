@@ -18,14 +18,13 @@ async function searchImages(query) {
         locale: 'en-US',
       },
     });
+    // See https://www.pexels.com/api/documentation/#rate-limiting
     console.log(`Pexels Total Calls: ${response.headers['x-ratelimit-limit']}`);
     console.log(`Pexels Remaining Calls: ${response.headers['x-ratelimit-remaining']}`);
-
     const unixTimestamp = response.headers['x-ratelimit-reset'];
     const date = new Date(unixTimestamp * 1000);
     const formattedDate = date.toLocaleString();
-    console.log(`Pexels Reset Time ${formattedDate}`); // Output: "1/14/2023, 3:23:16 AM"
-
+    console.log(`Pexels Reset Time ${formattedDate}`);
 
     return response.data.photos;
   } catch (error) {
